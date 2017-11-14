@@ -7,13 +7,13 @@
       <field name="model">devices.devices</field>
       <field name="arch" type="xml">
         <tree>
+          <field name="name"/>
           <field name="asset_number"/>
           <field name="category_id"/>
-          <field name="name"/>
           <field name="date"/>
           <field name="price"/>
-          <field name="department"/>
           <field name="user_name"/>
+          <field name="department"/>
           <field name="location"/>
           <field name="status"/>
           <field name="netwrok"/>
@@ -32,21 +32,22 @@
         	<sheet>
         		<group>
         			<group>
+        				<field name="name"/>
                 <field name="asset_number" string="asset number"/>
                 <field name="category_id"/>
-                <field name="name"/>
                 <field name="date"/>
                 <field name="price"/>
         			</group>
               <group>
+              	<field name="user_name"/>
                 <field name="department"/>
-                <field name="user_name"/>
                 <field name="location"/>
                 <field name="status"/>
                 <field name="netwrok"/>
         		  </group>
         	</group>
         	<group>
+            <field name="devices_features"/>
             <field name="notes"/>
         	</group>
         	</sheet>
@@ -57,26 +58,9 @@
         </form>
       </field>
     </record>
-    
-    <!-- category form 
-    
-    <record model="ir.ui.view" id="devices_categorys_form">
-    	<field name="name">devicescategory form</field>
-      <field name="model">devices.category</field>
-      <field name="arch" type="xml">
-      	<form>
-        	<sheet>
-        		<group>
-              <field name="name"/>
-        	  </group>
-        	</sheet>
-        </form>
-      </field>
-    </record>
-    -->
 
-   <!-- search -->
-   
+    <!-- devices search view -->
+
     <record model="ir.ui.view" id="devices_search_view">
       <field name="name">devices search</field>
       <field name="model">devices.devices</field>
@@ -99,7 +83,24 @@
       </field>
     </record>
 
-    <!-- actions opening views on models -->
+
+    <!-- Top menu item -->
+
+    <menuitem name="devices" id="devices.menu_root"/>
+
+    <!-- menu categories -->
+
+    <menuitem name="devices" id="devices.menu_1" parent="devices.menu_root"/>
+    <menuitem name="categories" id="devices.menu_2" parent="devices.menu_root"/>
+
+    <!-- menu actions -->
+
+    <menuitem name="list" id="devices.menu_1_list" parent="devices.menu_1"
+              action="devices.action_window"/>
+    <menuitem name="categories" id="devices.menu_2_list" parent="devices.menu_2"
+              action="devices.action_category_window"/>
+
+    <!-- menu actions opening views on models -->
 
     <record model="ir.actions.act_window" id="devices.action_window">
       <field name="name">devices window</field>
@@ -112,22 +113,6 @@
       <field name="res_model">devices.category</field>
       <field name="view_mode">tree,form</field>
     </record>
-    
-    
-    <!-- Top menu item -->
-
-    <menuitem name="devices" id="devices.menu_root"/>
-
-    <!-- menu categories -->
-
-    <menuitem name="Menu 1" id="devices.menu_1" parent="devices.menu_root"/>
-    <menuitem name="Menu 2" id="devices.menu_2" parent="devices.menu_root"/>
-
-    <!-- actions -->
-
-    <menuitem name="List" id="devices.menu_1_list" parent="devices.menu_1"
-              action="devices.action_window"/>
-    <menuitem name="List" id="devices.menu_2_list" parent="devices.menu_2"
-              action="devices.action_category_window"/>          
+              
   </data>
 </odoo>

@@ -1,2 +1,3 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_devices_devices,devices.devices,model_devices_devices,,1,0,0,0
+access_devices_category,devices.category,model_devices_category,,1,0,0,0

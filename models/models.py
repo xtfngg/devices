@@ -9,8 +9,8 @@ class devices(models.Model):
 
     asset_number = fields.Char(string="asset number")
     category_id = fields.Many2one('devices.category', string="category")
-    name = fields.Char(string="name")
-    date = fields.Date(string="date")
+    name = fields.Char(string="devices name")
+    date = fields.Date(string="purchase date")
     price = fields.Integer(string="price")
     department = fields.Char(string="department")
     user_name = fields.Many2one('res.users', string='user name', track_visibility='onchange')
@@ -25,12 +25,13 @@ class devices(models.Model):
     ('intranet','Intranet'),
     ('extranet','Extranet')
     ],string="netwrok", track_visibility='onchange')
+    devices_features = fields.Text(string="features")
     notes = fields.Text(string="notes")
 
 class devicescategory(models.Model):
 	
 	  _name = 'devices.category'
-	  _description = "Devices Category"
+	  _description = "devices category"
 	  
-	  name = fields.Char(string="Category Name", required=True)
+	  name = fields.Char(string="category name", required=True)
 #	  category_ids = fields.One2many('devices.devices', 'category_id', string='Category ids')
