@@ -50,10 +50,10 @@
             <field name="devices_features"/>
         	</group>
         	<group>
-        	  <field name="use_records"/>	
+            <field name="use_records"/>	
         	</group>
         	<group>
-        		<field name="notes"/>
+            <field name="notes"/>
         	</group>
         	</sheet>
           <div class="oe_chatter">
@@ -77,7 +77,11 @@
           <field name="user_name"/>
           <field name="status"/>
           <filter string="Assigned" name="assigned" domain="[('user_name', '!=', False)]"/>
+          <filter string="Unassigned" name="unassigned" domain="[('user_name', '=', False)]"/>
           <filter string="Available" name="available" domain="[('status', 'ilike', 'idle')]"/>
+          <filter string="Unavailable" name="unavailable" domain="[('status', '!=', 'idle')]"/>
+          <filter string="Scrapped" name="scrapped" domain="[('status', 'ilike', 'scrapped')]"/>
+          <filter string="Unknown" name="unknown" domain="[('status', 'ilike', 'unknown')]"/>
           <separator/>
           <group string='Group By'>
             <filter string='Category' domain="[]" context="{'group_by': 'category_id'}"/>

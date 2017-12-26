@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 11.0-20171113\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-15 07:28+0000\n"
-"PO-Revision-Date: 2017-11-15 15:29+0800\n"
+"POT-Creation-Date: 2017-12-26 01:23+0000\n"
+"PO-Revision-Date: 2017-12-26 09:24+0800\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: \n"
 "Language: zh_CN\n"
-"X-Generator: Poedit 2.0.4\n"
+"X-Generator: Poedit 2.0.5\n"
 
 #. module: devices
 #: model:ir.ui.view,arch_db:devices.devices_search_view
@@ -112,13 +112,28 @@ msgstr "最后更新时间"
 
 #. module: devices
 #: model:ir.ui.view,arch_db:devices.devices_search_view
-msgid "My Equipments"
-msgstr "我的设备"
+msgid "Owner"
+msgstr "所有者"
 
 #. module: devices
 #: model:ir.ui.view,arch_db:devices.devices_search_view
-msgid "Owner"
-msgstr "所有者"
+msgid "Scrapped"
+msgstr "报废"
+
+#. module: devices
+#: model:ir.ui.view,arch_db:devices.devices_search_view
+msgid "Unassigned"
+msgstr "未分配"
+
+#. module: devices
+#: model:ir.ui.view,arch_db:devices.devices_search_view
+msgid "Unavailable"
+msgstr "不可用"
+
+#. module: devices
+#: model:ir.ui.view,arch_db:devices.devices_search_view
+msgid "Unknown"
+msgstr "未知的"
 
 #. module: devices
 #: model:ir.model.fields,field_description:devices.field_devices_devices_asset_number
