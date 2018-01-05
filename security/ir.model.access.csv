@@ -1,6 +1,9 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_devices_devices,devices.devices,model_devices_devices,,1,0,0,0
-access_devices_category,devices.category,model_devices_category,,1,0,0,0
-access_devices_users,devices.users,model_devices_users,,1,0,0,0
-access_devices_department,devices.department,model_devices_department,,1,0,0,0
-access_devices_location,devices.location,model_devices_location,,1,0,0,0
+access_devices_devices_user,devices.devices.user,model_devices_devices,base.group_user,1,0,0,0
+access_devices_category_user,devices.category.user,model_devices_category,base.group_user,1,0,0,0
+access_devices_users_user,devices.users.user,model_devices_users,base.group_user,1,0,0,0
+access_devices_department_user,devices.department.user,model_devices_department,base.group_user,1,0,0,0
+access_devices_location_user,devices.location.user,model_devices_location,base.group_user,1,0,0,0
+access_devices_dongle_user,devices.dongle.user,model_devices_dongle,base.group_user,1,0,0,0
+access_devices_dongle_user_admin,devices.dongle.user.admin,model_dongle_users,group_other_manager,1,1,1,1
+access_devices_dongle_admin,devices.dongle.admin,model_devices_dongle,group_other_manager,1,1,1,1

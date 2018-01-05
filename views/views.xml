@@ -1,6 +1,6 @@
 <odoo>
   <data>
-    <!-- list view -->
+    <!-- computer list view -->
 
     <record model="ir.ui.view" id="devices_list">
       <field name="name">devices list</field>
@@ -21,8 +21,27 @@
         </tree>
       </field>
     </record>
-
-    <!-- form view -->
+    
+    <!-- dongle list view -->
+    
+    <record model="ir.ui.view" id="devices_dongle_list">
+      <field name="name">devices dongle list</field>
+      <field name="model">devices.dongle</field>
+      <field name="arch" type="xml">
+      	<tree>
+          <field name="name"/>
+          <field name="asset_number"/>
+	        <field name="borrow_date"/>
+	        <field name="use"/>
+	         <field name="user_name"/>
+	        <field name="return_date"/>
+	        <field name="recipients"/>
+	        <field name="notes"/>
+        </tree>
+      </field>
+    </record> 
+    
+    <!-- computer form view -->
 
     <record model="ir.ui.view" id="devices_form">
       <field name="name">devices from</field>
@@ -33,7 +52,7 @@
         		<group>
         			<group>
         				<field name="name"/>
-                <field name="asset_number" string="asset number"/>
+                <field name="asset_number"/>
                 <field name="category_id"/>
                 <field name="date"/>
                 <field name="price"/>
@@ -63,8 +82,43 @@
         </form>
       </field>
     </record>
-
-    <!-- devices search view -->
+    
+    <!-- dongle form view -->
+    
+    <record model="ir.ui.view" id="devices_dongle_form">
+      <field name="name">devices dongle from</field>
+      <field name="model">devices.dongle</field>
+      <field name="arch" type="xml">
+        <form>
+         	<sheet>
+         		<group>
+         			<group>
+        		    <field name="name"/>
+                <field name="asset_number"/>
+	              <field name="borrow_date"/>
+	              <field name="use"/>
+	              <field name="user_name"/>
+	            </group>
+	            <group>
+	              <field name="return_date"/>
+	              <field name="recipients"/>
+	            </group>  
+            </group>
+            <group>
+              <field name="use_records"/>
+        	  </group>
+            <group>
+              <field name="notes"/>
+        	  </group>
+          </sheet>
+          <div class="oe_chatter">
+          	<field name="message_ids" widget="mail_thread"/>
+          </div>
+        </form>
+      </field>
+    </record>
+    
+    <!-- computer search view -->
 
     <record model="ir.ui.view" id="devices_search_view">
       <field name="name">devices search</field>
@@ -76,22 +130,57 @@
           <field name="category_id"/>
           <field name="user_name"/>
           <field name="status"/>
-          <filter string="Assigned" name="assigned" domain="[('user_name', '!=', False)]"/>
-          <filter string="Unassigned" name="unassigned" domain="[('user_name', '=', False)]"/>
-          <filter string="Available" name="available" domain="[('status', 'ilike', 'idle')]"/>
-          <filter string="Unavailable" name="unavailable" domain="[('status', '!=', 'idle')]"/>
-          <filter string="Scrapped" name="scrapped" domain="[('status', 'ilike', 'scrapped')]"/>
-          <filter string="Unknown" name="unknown" domain="[('status', 'ilike', 'unknown')]"/>
+          <field name="location"/>
+          <field name="status"/>
+          <field name="netwrok"/>
+          <field name="department"/>
+          <field name="use_records"/>
+          <filter string="assigned" name="assigned" domain="[('user_name', '!=', False)]"/>
+          <filter string="unassigned" name="unassigned" domain="[('user_name', '=', False)]"/>
+          <filter string="available" name="available" domain="[('status', 'ilike', 'idle')]"/>
+          <filter string="unavailable" name="unavailable" domain="[('status', '!=', 'idle')]"/>
+          <filter string="scrapped" name="scrapped" domain="[('status', 'ilike', 'scrapped')]"/>
+          <filter string="unknown" name="unknown" domain="[('status', 'ilike', 'unknown')]"/>
           <separator/>
-          <group string='Group By'>
-            <filter string='Category' domain="[]" context="{'group_by': 'category_id'}"/>
-            <filter string='Owner' domain="[]" context="{'group_by': 'user_name'}"/>
+          <group string='group by'>
+            <filter string='category' domain="[]" context="{'group_by': 'category_id'}"/>
+            <filter string='users name' domain="[]" context="{'group_by': 'user_name'}"/>
+            <filter string='location' domain="[]" context="{'group_by': 'location'}"/>
+            <filter string='status' domain="[]" context="{'group_by': 'status'}"/>
+            <filter string='netwrok' domain="[]" context="{'group_by': 'netwrok'}"/>
+            <filter string='department' domain="[]" context="{'group_by': 'department'}"/>
+          </group>
+        </search>
+      </field>
+    </record>
+    
+    <!-- dongle search view -->
+    
+    <record model="ir.ui.view" id="devices_dongle_search_view">
+      <field name="name">devices dongle search</field>
+      <field name="model">devices.dongle</field>
+      <field name="arch" type="xml">
+        <search>
+        	<field name="name"/>
+          <field name="asset_number"/>
+	        <field name="borrow_date"/>
+	        <field name="use"/>
+	        <field name="user_name"/>
+	        <field name="return_date"/>
+	        <field name="recipients"/>
+	        <field name="notes"/>
+	        <field name="use_records"/>
+          <filter string="assigned" name="assigned" domain="[('user_name', '!=', False)]"/>
+          <filter string="unassigned" name="unassigned" domain="[('user_name', '=', False)]"/>
+          <separator/>
+          <group string='group by'>
+            <filter string='users name' domain="[]" context="{'group_by': 'user_name'}"/>
           </group>
         </search>
       </field>
     </record>
 
-    <!-- menu actions opening views on models -->
+    <!-- menu computer actions -->
 
     <record model="ir.actions.act_window" id="devices.action_window">
       <field name="name">devices window</field>
@@ -123,27 +212,43 @@
       <field name="view_mode">tree,form</field>
     </record>
     
+    <!-- menu dongle actions -->
+    
+    <record model="ir.actions.act_window" id="devices.action_dongle_window">
+      <field name="name">devices dongle window</field>
+      <field name="res_model">devices.dongle</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+    
     <!-- Top menu item -->
 
     <menuitem name="devices" id="devices.menu_root"/>
     
-    <!-- menu categories -->
+    <!-- menu left sidebar -->
 
-    <menuitem name="devices" id="devices.menu_1" parent="devices.menu_root"/>
-    <menuitem name="categories" id="devices.menu_2" parent="devices.menu_root"/>
+    <menuitem name="computer" id="devices.menu_1" parent="devices.menu_root"/>
+    <menuitem name="dongle" id="devices.menu_2" parent="devices.menu_root"/>
     
-    <!-- menu actions -->
-
-    <menuitem name="list" id="devices.menu_1_list" parent="devices.menu_1"
+    <!-- menu computer devices list actions -->
+    
+    <menuitem name="computer list" id="devices.menu_1_list" parent="devices.menu_1"
               action="devices.action_window"/>
-    <menuitem name="categories" id="devices.menu_2_list" parent="devices.menu_2"
+              
+    <menuitem name="categories" id="devices.menu_1_categories" parent="devices.menu_1"/>
+    
+    <menuitem name="categories" id="devices.menu_1_categories_action" parent="devices.menu_1_categories"
               action="devices.action_category_window"/>
-    <menuitem name="users" id="devices.menu_3_list" parent="devices.menu_2"
+    <menuitem name="users name" id="devices.menu_1_users_name_action" parent="devices.menu_1_categories"
               action="devices.action_users_window"/>
-    <menuitem name="department" id="devices.menu_4_list" parent="devices.menu_2"
+    <menuitem name="department" id="devices.menu_1_department_action" parent="devices.menu_1_categories"
               action="devices.action_department_window"/>
-    <menuitem name="location" id="devices.menu_5_list" parent="devices.menu_2"
+    <menuitem name="location" id="devices.menu_1_location_action" parent="devices.menu_1_categories"
               action="devices.action_location_window"/>
+              
+    <!-- menu dongle list actions -->
+    
+    <menuitem name="dongle list" id="devices.menu_2_list" parent="devices.menu_2"
+              action="devices.action_dongle_window"/>
     
   </data>
 </odoo>

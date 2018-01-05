@@ -28,6 +28,22 @@ class devices(models.Model):
     devices_features = fields.Text(string="features", track_visibility='onchange')
     use_records = fields.Text(string="use records", track_visibility='onchange')
     notes = fields.Text(string="notes", track_visibility='onchange')
+    
+class devices(models.Model):
+	  
+	  _name = 'devices.dongle'
+	  _description = "devices dongle"
+	  _inherit = 'mail.thread'
+	  
+	  name = fields.Char(string="devices name", track_visibility='onchange')
+	  user_name = fields.Many2one('dongle.users', string="users name", track_visibility='onchange')
+	  asset_number = fields.Char(string="asset number", track_visibility='onchange')
+	  borrow_date = fields.Date(string="borrow date", track_visibility='onchange')
+	  return_date = fields.Date(string="return date", track_visibility='onchange')
+	  use = fields.Char(string="use", track_visibility='onchange')
+	  recipients = fields.Many2one('dongle.users', string="recipients", track_visibility='onchange')
+	  notes = fields.Text(string="notes", track_visibility='onchange')
+	  use_records = fields.Text(string="use records", track_visibility='onchange')
 
 class devicescategory(models.Model):
 	
@@ -40,6 +56,13 @@ class devicesusers(models.Model):
 	
 	  _name = 'devices.users'
 	  _description = "devices users"
+	  
+	  name = fields.Char(string="users name", required=True)
+	  
+class dongleusers(models.Model):
+	
+	  _name = 'dongle.users'
+	  _description = "dongle users"
 	  
 	  name = fields.Char(string="users name", required=True)
 

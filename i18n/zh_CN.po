@@ -6,38 +6,25 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 11.0-20171113\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-12-26 01:23+0000\n"
-"PO-Revision-Date: 2017-12-26 09:24+0800\n"
+"POT-Creation-Date: 2018-01-04 09:13+0000\n"
+"PO-Revision-Date: 2018-01-04 17:14+0800\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: \n"
-"Language: zh_CN\n"
+"Language: zh\n"
 "X-Generator: Poedit 2.0.5\n"
-
-#. module: devices
-#: model:ir.ui.view,arch_db:devices.devices_search_view
-msgid "Assigned"
-msgstr "已分派"
-
-#. module: devices
-#: model:ir.ui.view,arch_db:devices.devices_search_view
-msgid "Available"
-msgstr "可用"
-
-#. module: devices
-#: model:ir.ui.view,arch_db:devices.devices_search_view
-msgid "Category"
-msgstr "类别"
 
 #. module: devices
 #: model:ir.model.fields,field_description:devices.field_devices_category_create_uid
 #: model:ir.model.fields,field_description:devices.field_devices_department_create_uid
 #: model:ir.model.fields,field_description:devices.field_devices_devices_create_uid
+#: model:ir.model.fields,field_description:devices.field_devices_dongle_create_uid
 #: model:ir.model.fields,field_description:devices.field_devices_location_create_uid
 #: model:ir.model.fields,field_description:devices.field_devices_users_create_uid
+#: model:ir.model.fields,field_description:devices.field_dongle_users_create_uid
 msgid "Created by"
 msgstr "创建人"
 
@@ -45,8 +32,10 @@ msgstr "创建人"
 #: model:ir.model.fields,field_description:devices.field_devices_category_create_date
 #: model:ir.model.fields,field_description:devices.field_devices_department_create_date
 #: model:ir.model.fields,field_description:devices.field_devices_devices_create_date
+#: model:ir.model.fields,field_description:devices.field_devices_dongle_create_date
 #: model:ir.model.fields,field_description:devices.field_devices_location_create_date
 #: model:ir.model.fields,field_description:devices.field_devices_users_create_date
+#: model:ir.model.fields,field_description:devices.field_dongle_users_create_date
 msgid "Created on"
 msgstr "创建时间"
 
@@ -54,8 +43,10 @@ msgstr "创建时间"
 #: model:ir.model.fields,field_description:devices.field_devices_category_display_name
 #: model:ir.model.fields,field_description:devices.field_devices_department_display_name
 #: model:ir.model.fields,field_description:devices.field_devices_devices_display_name
+#: model:ir.model.fields,field_description:devices.field_devices_dongle_display_name
 #: model:ir.model.fields,field_description:devices.field_devices_location_display_name
 #: model:ir.model.fields,field_description:devices.field_devices_users_display_name
+#: model:ir.model.fields,field_description:devices.field_dongle_users_display_name
 msgid "Display Name"
 msgstr "显示名称"
 
@@ -65,16 +56,13 @@ msgid "Extranet"
 msgstr "外网"
 
 #. module: devices
-#: model:ir.ui.view,arch_db:devices.devices_search_view
-msgid "Group By"
-msgstr "分组"
-
-#. module: devices
 #: model:ir.model.fields,field_description:devices.field_devices_category_id
 #: model:ir.model.fields,field_description:devices.field_devices_department_id
 #: model:ir.model.fields,field_description:devices.field_devices_devices_id
+#: model:ir.model.fields,field_description:devices.field_devices_dongle_id
 #: model:ir.model.fields,field_description:devices.field_devices_location_id
 #: model:ir.model.fields,field_description:devices.field_devices_users_id
+#: model:ir.model.fields,field_description:devices.field_dongle_users_id
 msgid "ID"
 msgstr "ID"
 
@@ -87,8 +75,10 @@ msgstr "内网"
 #: model:ir.model.fields,field_description:devices.field_devices_category___last_update
 #: model:ir.model.fields,field_description:devices.field_devices_department___last_update
 #: model:ir.model.fields,field_description:devices.field_devices_devices___last_update
+#: model:ir.model.fields,field_description:devices.field_devices_dongle___last_update
 #: model:ir.model.fields,field_description:devices.field_devices_location___last_update
 #: model:ir.model.fields,field_description:devices.field_devices_users___last_update
+#: model:ir.model.fields,field_description:devices.field_dongle_users___last_update
 msgid "Last Modified on"
 msgstr "最后修改时间"
 
@@ -96,8 +86,10 @@ msgstr "最后修改时间"
 #: model:ir.model.fields,field_description:devices.field_devices_category_write_uid
 #: model:ir.model.fields,field_description:devices.field_devices_department_write_uid
 #: model:ir.model.fields,field_description:devices.field_devices_devices_write_uid
+#: model:ir.model.fields,field_description:devices.field_devices_dongle_write_uid
 #: model:ir.model.fields,field_description:devices.field_devices_location_write_uid
 #: model:ir.model.fields,field_description:devices.field_devices_users_write_uid
+#: model:ir.model.fields,field_description:devices.field_dongle_users_write_uid
 msgid "Last Updated by"
 msgstr "最后更新者"
 
@@ -105,50 +97,44 @@ msgstr "最后更新者"
 #: model:ir.model.fields,field_description:devices.field_devices_category_write_date
 #: model:ir.model.fields,field_description:devices.field_devices_department_write_date
 #: model:ir.model.fields,field_description:devices.field_devices_devices_write_date
+#: model:ir.model.fields,field_description:devices.field_devices_dongle_write_date
 #: model:ir.model.fields,field_description:devices.field_devices_location_write_date
 #: model:ir.model.fields,field_description:devices.field_devices_users_write_date
+#: model:ir.model.fields,field_description:devices.field_dongle_users_write_date
 msgid "Last Updated on"
 msgstr "最后更新时间"
 
 #. module: devices
-#: model:ir.ui.view,arch_db:devices.devices_search_view
-msgid "Owner"
-msgstr "所有者"
-
-#. module: devices
-#: model:ir.ui.view,arch_db:devices.devices_search_view
-msgid "Scrapped"
-msgstr "报废"
-
-#. module: devices
-#: model:ir.ui.view,arch_db:devices.devices_search_view
-msgid "Unassigned"
-msgstr "未分配"
-
-#. module: devices
-#: model:ir.ui.view,arch_db:devices.devices_search_view
-msgid "Unavailable"
-msgstr "不可用"
-
-#. module: devices
-#: model:ir.ui.view,arch_db:devices.devices_search_view
-msgid "Unknown"
-msgstr "未知的"
-
-#. module: devices
 #: model:ir.model.fields,field_description:devices.field_devices_devices_asset_number
-#: model:ir.ui.view,arch_db:devices.devices_form
+#: model:ir.model.fields,field_description:devices.field_devices_dongle_asset_number
 msgid "asset number"
 msgstr "资产编号"
 
 #. module: devices
-#: model:ir.ui.menu,name:devices.menu_2
-#: model:ir.ui.menu,name:devices.menu_2_list
+#: model:ir.ui.view,arch_db:devices.devices_dongle_search_view
+#: model:ir.ui.view,arch_db:devices.devices_search_view
+msgid "assigned"
+msgstr "已分配"
+
+#. module: devices
+#: model:ir.ui.view,arch_db:devices.devices_search_view
+msgid "available"
+msgstr "可用的"
+
+#. module: devices
+#: model:ir.model.fields,field_description:devices.field_devices_dongle_borrow_date
+msgid "borrow date"
+msgstr "借用日期"
+
+#. module: devices
+#: model:ir.ui.menu,name:devices.menu_1_categories
+#: model:ir.ui.menu,name:devices.menu_1_categories_action
 msgid "categories"
 msgstr "类别"
 
 #. module: devices
 #: model:ir.model.fields,field_description:devices.field_devices_devices_category_id
+#: model:ir.ui.view,arch_db:devices.devices_search_view
 msgid "category"
 msgstr "类别"
 
@@ -158,14 +144,25 @@ msgid "category name"
 msgstr "类别名称"
 
 #. module: devices
+#: model:ir.ui.menu,name:devices.menu_1
+msgid "computer"
+msgstr "电脑"
+
+#. module: devices
+#: model:ir.ui.menu,name:devices.menu_1_list
+msgid "computer list"
+msgstr "电脑列表"
+
+#. module: devices
 #: model:ir.model.fields,field_description:devices.field_devices_department_name
 #: model:ir.model.fields,field_description:devices.field_devices_devices_department
-#: model:ir.ui.menu,name:devices.menu_4_list
+#: model:ir.ui.menu,name:devices.menu_1_department_action
+#: model:ir.ui.view,arch_db:devices.devices_search_view
 msgid "department"
 msgstr "部门"
 
 #. module: devices
-#: model:ir.ui.menu,name:devices.menu_1 model:ir.ui.menu,name:devices.menu_root
+#: model:ir.ui.menu,name:devices.menu_root
 msgid "devices"
 msgstr "设备"
 
@@ -190,6 +187,16 @@ msgid "devices department window"
 msgstr "设备部门窗口"
 
 #. module: devices
+#: model:ir.model,name:devices.model_devices_dongle
+msgid "devices dongle"
+msgstr "设备加密狗"
+
+#. module: devices
+#: model:ir.actions.act_window,name:devices.action_dongle_window
+msgid "devices dongle window"
+msgstr "设备加密狗窗口"
+
+#. module: devices
 #: model:ir.model,name:devices.model_devices_location
 msgid "devices location"
 msgstr "设备位置"
@@ -201,6 +208,7 @@ msgstr "设备位置窗口"
 
 #. module: devices
 #: model:ir.model.fields,field_description:devices.field_devices_devices_name
+#: model:ir.model.fields,field_description:devices.field_devices_dongle_name
 msgid "devices name"
 msgstr "设备名称"
 
@@ -225,9 +233,30 @@ msgid "devices.devices"
 msgstr "设备"
 
 #. module: devices
+#: model:ir.ui.menu,name:devices.menu_2
+msgid "dongle"
+msgstr "加密狗"
+
+#. module: devices
+#: model:ir.ui.menu,name:devices.menu_2_list
+msgid "dongle list"
+msgstr "加密狗列表"
+
+#. module: devices
+#: model:ir.model,name:devices.model_dongle_users
+msgid "dongle users"
+msgstr "加密狗使用人"
+
+#. module: devices
 #: model:ir.model.fields,field_description:devices.field_devices_devices_devices_features
 msgid "features"
 msgstr "配置"
+
+#. module: devices
+#: model:ir.ui.view,arch_db:devices.devices_dongle_search_view
+#: model:ir.ui.view,arch_db:devices.devices_search_view
+msgid "group by"
+msgstr "分组"
 
 #. module: devices
 #: selection:devices.devices,status:0
@@ -235,26 +264,29 @@ msgid "idle"
 msgstr "闲置"
 
 #. module: devices
-#: model:ir.ui.menu,name:devices.menu_1_list
-msgid "list"
-msgstr "列表"
-
-#. module: devices
 #: model:ir.model.fields,field_description:devices.field_devices_devices_location
 #: model:ir.model.fields,field_description:devices.field_devices_location_name
-#: model:ir.ui.menu,name:devices.menu_5_list
+#: model:ir.ui.menu,name:devices.menu_1_location_action
+#: model:ir.ui.view,arch_db:devices.devices_search_view
 msgid "location"
 msgstr "位置"
 
 #. module: devices
 #: model:ir.model.fields,field_description:devices.field_devices_devices_netwrok
+#: model:ir.ui.view,arch_db:devices.devices_search_view
 msgid "netwrok"
 msgstr "网络"
 
 #. module: devices
 #: model:ir.model.fields,field_description:devices.field_devices_devices_notes
+#: model:ir.model.fields,field_description:devices.field_devices_dongle_notes
 msgid "notes"
 msgstr "备注"
+
+#. module: devices
+#: model:res.groups,name:devices.group_other_manager
+msgid "other manager"
+msgstr "其他管理员"
 
 #. module: devices
 #: model:ir.model.fields,field_description:devices.field_devices_devices_price
@@ -267,33 +299,63 @@ msgid "purchase date"
 msgstr "购买日期"
 
 #. module: devices
+#: model:ir.model.fields,field_description:devices.field_devices_dongle_recipients
+msgid "recipients"
+msgstr "接收人"
+
+#. module: devices
+#: model:ir.model.fields,field_description:devices.field_devices_dongle_return_date
+msgid "return date"
+msgstr "归还日期"
+
+#. module: devices
 #: selection:devices.devices,status:0
+#: model:ir.ui.view,arch_db:devices.devices_search_view
 msgid "scrapped"
 msgstr "报废"
 
 #. module: devices
 #: model:ir.model.fields,field_description:devices.field_devices_devices_status
+#: model:ir.ui.view,arch_db:devices.devices_search_view
 msgid "status"
 msgstr "状态"
 
 #. module: devices
+#: model:ir.ui.view,arch_db:devices.devices_dongle_search_view
+#: model:ir.ui.view,arch_db:devices.devices_search_view
+msgid "unassigned"
+msgstr "未分配"
+
+#. module: devices
+#: model:ir.ui.view,arch_db:devices.devices_search_view
+msgid "unavailable"
+msgstr "不可用"
+
+#. module: devices
 #: selection:devices.devices,status:0
+#: model:ir.ui.view,arch_db:devices.devices_search_view
 msgid "unknown"
 msgstr "未知"
 
 #. module: devices
+#: model:ir.model.fields,field_description:devices.field_devices_dongle_use
+msgid "use"
+msgstr "用途"
+
+#. module: devices
 #: model:ir.model.fields,field_description:devices.field_devices_devices_use_records
+#: model:ir.model.fields,field_description:devices.field_devices_dongle_use_records
 msgid "use records"
 msgstr "使用记录"
 
 #. module: devices
-#: model:ir.ui.menu,name:devices.menu_3_list
-msgid "users"
-msgstr "使用人"
-
-#. module: devices
 #: model:ir.model.fields,field_description:devices.field_devices_devices_user_name
+#: model:ir.model.fields,field_description:devices.field_devices_dongle_user_name
 #: model:ir.model.fields,field_description:devices.field_devices_users_name
+#: model:ir.model.fields,field_description:devices.field_dongle_users_name
+#: model:ir.ui.menu,name:devices.menu_1_users_name_action
+#: model:ir.ui.view,arch_db:devices.devices_dongle_search_view
+#: model:ir.ui.view,arch_db:devices.devices_search_view
 msgid "users name"
 msgstr "使用人姓名"
 

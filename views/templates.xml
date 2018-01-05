@@ -1,6 +1,7 @@
 <odoo>
     <template id="assets_backend" name="devices assets" inherit_id="web.assets_backend">
         <xpath expr="." position="inside">
+            <script type="text/javascript" src="/devices/static/src/js/sticky_table_headers.js"></script>
             <link rel="stylesheet" href="/devices/static/src/less/devices.less"/>
         </xpath>
     </template>
